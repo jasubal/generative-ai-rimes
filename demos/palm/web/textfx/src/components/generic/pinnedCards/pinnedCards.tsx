@@ -21,6 +21,7 @@ import {HTML5Backend} from 'react-dnd-html5-backend'
 import {TouchBackend} from 'react-dnd-touch-backend'
 import {Preview} from 'react-dnd-preview'
 import {macros} from '~/constants'
+import {t} from '~/translations'
 
 import Icon from '~/components/generic/icon/icon'
 import PinnedCard from './pinnedCard'
@@ -102,7 +103,7 @@ const PinnedCards = () => {
         >
           <h3>
             <Icon name="pin" />
-            {`PINNED (${pins.length})`}
+            {`${t('pinned.header')} (${pins.length})`}
           </h3>
           <Icon className={c(styles.arrow)} name="collapseArrow" />
         </button>
@@ -133,7 +134,7 @@ const PinnedCards = () => {
                 })
               ) : (
                 <li className={c(styles.pin, styles.noPins)}>
-                  <p>You haven&apos;t pinned anything yet.</p>
+                  <p>{t('pinned.none')}</p>
                 </li>
               )}
             </ul>

@@ -18,6 +18,7 @@
 
 import {useState, useEffect} from 'react'
 import {tippyOptions} from '~/constants'
+import {t} from '~/translations'
 
 import Tippy from '@tippyjs/react'
 import Icon from '../icon/icon'
@@ -83,8 +84,8 @@ const SpeechToText = ({onResult}: ISpeechToText) => {
   }
 
   return (
-    <Tippy content="Speak" {...tippyOptions}>
-      <button title="Speak" className={styles.root} onClick={toggleListening}>
+    <Tippy content={t('speech.speak')} {...tippyOptions}>
+      <button title={t('speech.speak')} className={styles.root} onClick={toggleListening}>
         {!isListening && !isWaitingForResult && <Icon name="mic" />}
         {isListening && !isWaitingForResult && <Icon name="micListening" />}
         {isWaitingForResult && <Icon name="micWaiting" />}

@@ -17,6 +17,7 @@
 import {useRef, useState, useEffect} from 'react'
 import {useActions} from '~/store'
 import {IMacro, colors, tippyOptions} from '~/constants'
+import {t} from '~/translations'
 
 import Tippy from '@tippyjs/react'
 // @ts-ignore
@@ -306,12 +307,12 @@ const MacroInput = ({macro}: IMacroInput) => {
       <div className={styles.actions}>
         <div className={styles.rangeSlider}>
           <Tippy
-            content="Amount of creativity allowed in outputs"
+            content={t('input.creativity')}
             {...tippyOptions}
           >
             {/* eslint-disable */}
             {/* tabIndex is needed for tippy to work */}
-            <span tabIndex={0}>Temperature</span>
+            <span tabIndex={0}>{t('input.temperature')}</span>
             {/* eslint-enable */}
           </Tippy>
           <RangeSlider
@@ -327,7 +328,7 @@ const MacroInput = ({macro}: IMacroInput) => {
         </div>
         <Button
           size="default"
-          label="run"
+          label={t('input.run')}
           variant={
             Object.keys(colors).find(
               (c: string) => colors[c as keyof typeof colors] === macro.color

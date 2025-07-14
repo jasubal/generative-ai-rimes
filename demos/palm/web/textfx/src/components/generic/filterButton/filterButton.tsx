@@ -18,6 +18,7 @@
 
 import {useEffect, useState} from 'react'
 import {useFilters, useMacros, useActions} from '~/store'
+import {t} from '~/translations'
 import {tippyOptions} from '~/constants'
 
 import FilterList from '../filterList/filterList'
@@ -46,7 +47,7 @@ const FilterButton = ({active, ...rest}: IFilterButton) => {
   return (
     <>
       <div className={styles.main}>
-        <Tippy content="Filter by" {...tippyOptions}>
+        <Tippy content={t('filter.by')} {...tippyOptions}>
           <button
             className={c(styles.root, active && styles.filled)}
             onClick={() => setOpen(!open)}
@@ -54,7 +55,7 @@ const FilterButton = ({active, ...rest}: IFilterButton) => {
           >
             <Icon name="all" />
             <span>
-              {filters.length !== macros.length ? `(${filters.length})` : 'All'}
+              {filters.length !== macros.length ? `(${filters.length})` : t('filter.all')}
             </span>
             <Icon name="arrow" />
           </button>

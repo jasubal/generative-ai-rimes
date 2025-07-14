@@ -17,6 +17,7 @@
 import {useState, useRef, useEffect} from 'react'
 import {IMacroOutput} from '~/constants'
 import {macros, tippyOptions} from '~/constants'
+import {t} from '~/translations'
 import {useActions, useOutputPins} from '~/store'
 import {scrollIntoViewWithOffset} from '~/lib/utils'
 import useWindowSize from '~/hooks/useWindowSize'
@@ -213,14 +214,14 @@ const OutputCard = ({output}: {output: IMacroOutput}) => {
         )}
         <div className={c(styles.outputActions)}>
           <Tippy
-            content="Copy"
+            content={t('output.copy')}
             placement="top-end"
             offset={[10, 10]}
             {...tippyOptions}
           >
             <button
               type="button"
-              aria-label="Copy"
+              aria-label={t('output.copy')}
               className={styles.copyButton}
               onClick={() => {
                 setCopiedIndex(idx)
@@ -234,7 +235,7 @@ const OutputCard = ({output}: {output: IMacroOutput}) => {
             </button>
           </Tippy>
           <Tippy
-            content="Pin"
+            content={t('output.pin')}
             placement="top-end"
             offset={[10, 10]}
             className={macro?.id}
@@ -243,7 +244,7 @@ const OutputCard = ({output}: {output: IMacroOutput}) => {
             <button
               className={c(styles.pinButton, isPinned && styles.pinned)}
               type="button"
-              aria-label="Pin"
+              aria-label={t('output.pin')}
               onClick={() => {
                 pinOutput(output.id, idx, labelText)
               }}
@@ -252,7 +253,7 @@ const OutputCard = ({output}: {output: IMacroOutput}) => {
             </button>
           </Tippy>
 
-          <span className={c(styles.copied)}>Copied!</span>
+          <span className={c(styles.copied)}>{t('copied')}</span>
         </div>
       </>
     )
@@ -295,10 +296,10 @@ const OutputCard = ({output}: {output: IMacroOutput}) => {
             {labelText}
           </h3>
           <div className={styles.actions}>
-            <Tippy content="Re-run" {...tippyOptions} className={macro?.id}>
+            <Tippy content={t('output.reRun')} {...tippyOptions} className={macro?.id}>
               <button
                 type="button"
-                aria-label="Re-run"
+                aria-label={t('output.reRun')}
                 onClick={() => {
                   reRunOutput(output.id)
                 }}
@@ -306,10 +307,10 @@ const OutputCard = ({output}: {output: IMacroOutput}) => {
                 <Icon name="refresh" />
               </button>
             </Tippy>
-            <Tippy content="Delete" {...tippyOptions} className={macro?.id}>
+            <Tippy content={t('output.delete')} {...tippyOptions} className={macro?.id}>
               <button
                 type="button"
-                aria-label="Delete"
+                aria-label={t('output.delete')}
                 onClick={() => {
                   deleteOutputs([output])
                 }}
