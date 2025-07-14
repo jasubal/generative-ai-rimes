@@ -22,18 +22,19 @@ import Step3Image from '~/assets/images/welcome/welcome-step-3.jpg'
 
 import styles from './welcome.module.scss'
 import c from 'classnames'
+import {t} from '~/translations'
 
 const howItGoes = [
   {
-    title: 'Select a tool',
+    title: t('welcome.stepSelectTool'),
     image: Step1Image
   },
   {
-    title: 'Enter an input',
+    title: t('welcome.stepEnterInput'),
     image: Step2Image
   },
   {
-    title: 'Explore outputs',
+    title: t('welcome.stepExploreOutputs'),
     image: Step3Image
   }
 ]
@@ -47,7 +48,7 @@ const Step2 = () => {
 
   return (
     <div className={c(styles.screen2, mounted && styles.animate)}>
-      <span className={styles.heading}>How it works:</span>
+      <span className={styles.heading}>{t('welcome.howItWorks')}</span>
       <ul className={styles.steps}>
         {howItGoes.map((hig, i) => {
           return (

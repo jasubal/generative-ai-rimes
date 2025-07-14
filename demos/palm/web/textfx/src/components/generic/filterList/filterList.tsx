@@ -15,6 +15,7 @@
  */
 
 import {useActions, useFilters} from '~/store'
+import {t} from '~/translations'
 import {macros} from '~/constants'
 
 import Checkbox from '../checkbox/checkbox'
@@ -55,7 +56,7 @@ const FilterList = () => {
         >
           <button onClick={handleAllSelect} className={styles.macroItem}>
             <Icon name="all" />
-            <span>All</span>
+            <span>{t('filter.all')}</span>
           </button>
           <Checkbox
             checked={filters.length === macros.length}

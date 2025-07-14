@@ -17,6 +17,7 @@
 import {useState} from 'react'
 import {useOutputs, useFilters, useActions, useOutputPins} from '~/store'
 import {IMacroOutput, tippyOptions} from '~/constants'
+import {t} from '~/translations'
 
 import Tippy from '@tippyjs/react'
 import OutputCard from '../outputCard/outputCard'
@@ -54,20 +55,17 @@ const OutputSection = () => {
     <section className={c(styles.outputSection, isMobile && styles.mobile)}>
       <header className={c('container')}>
         <div className={styles.heading}>
-          <h2>OUTPUTS</h2>
-          <span className={styles.disclaimer}>
-            (may contain inaccurate or offensive information that does not
-            represent Google&apos;s views)
-          </span>
+          <h2>{t('outputs.heading')}</h2>
+          <span className={styles.disclaimer}>{t('outputs.disclaimer')}</span>
         </div>
         <div className={styles.headActions}>
           <div className={c(styles.filters)}>
             <FilterButton active={false} />
           </div>
           <div className={c(styles.actions)}>
-            <Tippy content="Download all" {...tippyOptions}>
+            <Tippy content={t('outputs.downloadAll')} {...tippyOptions}>
               <a
-                title="Download all"
+                title={t('outputs.downloadAll')}
                 href={getDownload(outputs)}
                 download="outputs.txt"
               >
@@ -75,9 +73,9 @@ const OutputSection = () => {
               </a>
             </Tippy>
 
-            <Tippy content="Delete all" {...tippyOptions}>
+            <Tippy content={t('outputs.deleteAll')} {...tippyOptions}>
               <button
-                title="Delete all"
+                title={t('outputs.deleteAll')}
                 type="button"
                 aria-label="Delete"
                 onClick={() => setShowPopup(true)}
@@ -93,16 +91,16 @@ const OutputSection = () => {
               onOutsideClick={() => setShowPopup(false)}
               actions={[
                 {
-                  label: 'Yes',
+                  label: t('outputs.yes'),
                   onClick: () => deleteAllOutputs()
                 },
                 {
-                  label: 'No',
+                  label: t('outputs.no'),
                   onClick: () => setShowPopup(false)
                 }
               ]}
-              headline={'Delete Outputs'}
-              label={'Are you sure you want to delete all outputs?'}
+              headline={t('outputs.deleteOutputsHeadline')}
+              label={t('outputs.deleteOutputsLabel')}
             />
           )}
         </div>

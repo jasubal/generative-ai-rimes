@@ -22,22 +22,18 @@ import lupeSignature from '~/assets/lupe_signature_animation_lottie.json'
 
 import styles from './welcome.module.scss'
 import c from 'classnames'
+import {t} from '~/translations'
 
-const greeting = 'Welcome to TextFX.'
-const p1a =
-  'These tools were inspired by some of the lyrical and linguistic techniques I have developed over 20 years of writing Raps. '
-const p1b =
-  "But TextFX won't write Raps for you. Instead, these tools are designed to empower your writing, provide creative possibilities and help you see text in new ways. "
-const p1c =
-  'Like with any tool, you still need to bring your own creativity and skillset to them.'
+const greeting = t('welcome.greeting')
+const p1a = t('welcome.p1a')
+const p1b = t('welcome.p1b')
+const p1c = t('welcome.p1c')
 
-const p2a =
-  'TextFX was created in collaboration with Google using MakerSuite and the PaLM API. '
-const p2b =
-  "Hopefully, it will show you what's possible with the PaLM API and inspire you to bring your own ideas to life, in whatever your craft may be."
+const p2a = t('welcome.p2a')
+const p2b = t('welcome.p2b')
 
-const signoff = 'Enjoy the journey,'
-const postSignature = 'Lupe Fiasco'
+const signoff = t('welcome.signoff')
+const postSignature = t('welcome.postSignature')
 
 const wait = async (time: number) => {
   return await new Promise(resolve => setTimeout(resolve, time))

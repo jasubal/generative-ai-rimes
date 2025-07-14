@@ -43,6 +43,7 @@ import {
 } from '~/lib/priming'
 
 import adaptPromptData from '~/lib/adaptPromptDataFormat'
+import {t} from './translations'
 
 declare global {
   /* eslint-disable-next-line no-unused-vars */
@@ -125,11 +126,11 @@ export interface IMacro {
 export const macros: IMacro[] = [
   {
     id: 'simile',
-    name: 'Simile',
+    name: t('macro.simile'),
     slug: 'simile',
     icon: 'simile',
     textLabel: '============= SIMILE =============',
-    description: 'Create a simile about a thing or concept.',
+    description: t('desc.simile'),
     color: colors.tennis,
     videoUrl: watchLupeUseItVideos.simile,
     lottie: 'simile_hero_animation_lottie',
@@ -170,14 +171,14 @@ export const macros: IMacro[] = [
     },
     inputs: [
       {
-        label: 'Enter a thing or concept:',
+        label: t('label.thingOrConcept'),
         placeholder: [
-          'waiting',
-          'a dilemma',
-          'keeping a secret',
-          'an epiphany',
-          'starting over',
-          'a process'
+          t('ph.waiting'),
+          t('ph.dilemma'),
+          t('ph.keepingSecret'),
+          t('ph.epiphany'),
+          t('ph.startingOver'),
+          t('ph.process')
         ],
         maxLength: 25
       }
@@ -186,11 +187,11 @@ export const macros: IMacro[] = [
   },
   {
     id: 'explode',
-    name: 'Explode',
+    name: t('macro.explode'),
     slug: 'explode',
     icon: 'explode',
     textLabel: '/-A-\\ /-A-\\ / EXPLODE \\ /-A-\\ /-A-\\',
-    description: 'Break a word into similar-sounding phrases.',
+    description: t('desc.explode'),
     color: colors.lavender,
     videoUrl: watchLupeUseItVideos.explode,
     lottie: 'explode_hero_animation_lottie',
@@ -241,14 +242,14 @@ export const macros: IMacro[] = [
     },
     inputs: [
       {
-        label: 'Enter a word:',
+        label: t('label.word'),
         placeholder: [
-          'viability',
-          'helicopter',
-          'clarify',
-          'serendipity',
-          'organize',
-          'planetarium'
+          t('ph.viability'),
+          t('ph.helicopter'),
+          t('ph.clarify'),
+          t('ph.serendipity'),
+          t('ph.organize'),
+          t('ph.planetarium')
         ],
         maxLength: 15,
         allowSpaces: false
@@ -258,11 +259,11 @@ export const macros: IMacro[] = [
   },
   {
     id: 'unexpect',
-    name: 'Unexpect',
+    name: t('macro.unexpect'),
     slug: 'unexpect',
     icon: 'unexpect',
     textLabel: '?????????????? UNEXPECT ???????????',
-    description: 'Make a scene more unexpected and imaginative.',
+    description: t('desc.unexpect'),
     color: colors.mint,
     videoUrl: watchLupeUseItVideos.unexpect,
     lottie: 'unexpect_hero_animation_lottie',
@@ -316,14 +317,14 @@ export const macros: IMacro[] = [
     },
     inputs: [
       {
-        label: 'Enter a scene:',
+        label: t('label.scene'),
         placeholder: [
-          'a glass of water',
-          'making a sandwich',
-          'a key',
-          'changing a lightbulb',
-          'a game of chess',
-          'paragliding'
+          t('ph.glassWater'),
+          t('ph.makingSandwich'),
+          t('ph.aKey'),
+          t('ph.changingBulb'),
+          t('ph.chessGame'),
+          t('ph.paragliding')
         ],
         maxLength: 25
       }
@@ -332,11 +333,11 @@ export const macros: IMacro[] = [
   },
   {
     id: 'chain',
-    name: 'Chain',
+    name: t('macro.chain'),
     slug: 'chain',
     icon: 'chain',
     textLabel: 'o-o-o-o-o-o-o CHAIN o-o-o-o-o-o-o-o',
-    description: 'Build a chain of semantically related items.',
+    description: t('desc.chain'),
     color: colors.cardboard,
     videoUrl: watchLupeUseItVideos.chain,
     lottie: 'chain_hero_animation_lottie',
@@ -372,8 +373,15 @@ export const macros: IMacro[] = [
     },
     inputs: [
       {
-        label: 'Enter a word:',
-        placeholder: ['picture', 'ball', 'layer', 'soil', 'glass', 'coin'],
+        label: t('label.word'),
+        placeholder: [
+          t('ph.picture'),
+          t('ph.ball'),
+          t('ph.layer'),
+          t('ph.soil'),
+          t('ph.glass'),
+          t('ph.coin')
+        ],
         maxLength: 15
       }
     ],
@@ -381,11 +389,11 @@ export const macros: IMacro[] = [
   },
   {
     id: 'pov',
-    name: 'POV',
+    name: t('macro.pov'),
     slug: 'pov',
     icon: 'pov',
     textLabel: '^ ⦿ ⌄ ^ ⦿ ⌄   P.O.V.   ^ ⦿ ⌄ ^ ⦿ ⌄',
-    description: 'Evaluate a topic through different points of view.',
+    description: t('desc.pov'),
     color: colors.coral,
     videoUrl: watchLupeUseItVideos.pov,
     lottie: 'pov_hero_animation_lottie',
@@ -424,14 +432,14 @@ export const macros: IMacro[] = [
     },
     inputs: [
       {
-        label: 'Enter a topic:',
+        label: t('label.topic'),
         placeholder: [
-          'analog clocks',
-          'succulents',
-          'minivans',
-          'turtlenecks',
-          'vegan desserts',
-          'Sundays'
+          t('ph.analogClocks'),
+          t('ph.succulents'),
+          t('ph.minivans'),
+          t('ph.turtlenecks'),
+          t('ph.veganDesserts'),
+          t('ph.sundays')
         ],
         maxLength: 25
       }
@@ -440,11 +448,11 @@ export const macros: IMacro[] = [
   },
   {
     id: 'alliteration',
-    name: 'Alliteration',
+    name: t('macro.alliteration'),
     slug: 'alliteration',
     icon: 'alliteration',
     textLabel: 'A_A_ A_A_  ALLITERATION  A_A_ A_A_ ',
-    description: 'Curate topic-specific words that start with a chosen letter.',
+    description: t('desc.alliteration'),
     color: colors.sky,
     videoUrl: watchLupeUseItVideos.alliteration,
     lottie: 'alliteration_hero_animation_lottie',
@@ -494,23 +502,23 @@ export const macros: IMacro[] = [
       }
     },
     getCardLabel: (inputs: string[]) => {
-      return `${inputs[0]} starting with ${inputs[1].toUpperCase()}`
+      return `${inputs[0]} ${t('phrase.startingWith')} ${inputs[1].toUpperCase()}`
     },
     inputs: [
       {
-        label: 'Enter a topic:',
+        label: t('label.topic'),
         placeholder: [
-          'animals',
-          'historical figures',
-          'musical instruments',
-          'things related to technology',
-          'things that can fit in your pocket',
-          'adjectives for describing food'
+          t('ph.animals'),
+          t('ph.historicalFigures'),
+          t('ph.musicalInstruments'),
+          t('ph.techThings'),
+          t('ph.fitPocket'),
+          t('ph.foodAdjectives')
         ],
         maxLength: 50
       },
       {
-        label: 'Words starting with:',
+        label: t('label.wordsStarting'),
         placeholder: [],
         type: 'dropdown'
       }
@@ -519,11 +527,11 @@ export const macros: IMacro[] = [
   },
   {
     id: 'acronym',
-    name: 'Acronym',
+    name: t('macro.acronym'),
     slug: 'acronym',
     icon: 'acronym',
     textLabel: 'R.A.P. R.A.P. ACRONYM  R.A.P. R.A.P.',
-    description: 'Create an acronym using the letters of a word.',
+    description: t('desc.acronym'),
     color: colors.barbie,
     videoUrl: watchLupeUseItVideos.acronym,
     lottie: 'acronym_hero_animation_lottie',
@@ -563,8 +571,15 @@ export const macros: IMacro[] = [
     },
     inputs: [
       {
-        label: 'Enter a word:',
-        placeholder: ['metro', 'word', 'rap', 'flare', 'name', 'space'],
+        label: t('label.word'),
+        placeholder: [
+          t('ph.metro'),
+          t('ph.word'),
+          t('ph.rap'),
+          t('ph.flare'),
+          t('ph.name'),
+          t('ph.space')
+        ],
         maxLength: 15
       }
     ],
@@ -572,11 +587,11 @@ export const macros: IMacro[] = [
   },
   {
     id: 'fuse',
-    name: 'Fuse',
+    name: t('macro.fuse'),
     slug: 'fuse',
     icon: 'fuse',
     textLabel: 'OO OO OO OO OO FUSE OO OO OO OO OO',
-    description: 'Find intersections between two things.',
+    description: t('desc.fuse'),
     color: colors.marigold,
     videoUrl: watchLupeUseItVideos.fuse,
     lottie: 'fuse_hero_animation_lottie',
@@ -622,26 +637,26 @@ export const macros: IMacro[] = [
     },
     inputs: [
       {
-        label: 'Enter a thing:',
+        label: t('label.thing'),
         placeholder: [
-          'library',
-          'coding',
-          'mango',
-          'romance',
-          'parrot',
-          'compliment'
+          t('ph.library'),
+          t('ph.coding'),
+          t('ph.mango'),
+          t('ph.romance'),
+          t('ph.parrot'),
+          t('ph.compliment')
         ],
         maxLength: 15
       },
       {
-        label: 'Enter another one:',
+        label: t('label.anotherOne'),
         placeholder: [
-          'graveyard',
-          'poetry',
-          'picture frame',
-          'democracy',
-          'octopus',
-          'insult'
+          t('ph.graveyard'),
+          t('ph.poetry'),
+          t('ph.pictureFrame'),
+          t('ph.democracy'),
+          t('ph.octopus'),
+          t('ph.insult')
         ],
         maxLength: 15
       }
@@ -650,11 +665,11 @@ export const macros: IMacro[] = [
   },
   {
     id: 'scene',
-    name: 'Scene',
+    name: t('macro.scene'),
     slug: 'scene',
     icon: 'scene',
     textLabel: '•_-_-_ •_-_-_  SCENE •_-_-_ •_-_-_',
-    description: 'Generate sensory details about a scene.',
+    description: t('desc.scene'),
     color: colors.berry,
     videoUrl: watchLupeUseItVideos.scene,
     lottie: 'scene_hero_animation_lottie',
@@ -707,14 +722,14 @@ export const macros: IMacro[] = [
     },
     inputs: [
       {
-        label: 'Enter a scene:',
+        label: t('label.scene'),
         placeholder: [
-          'checking in to a hotel',
-          'reheated takeout',
-          'a first date',
-          'an auto repair shop',
-          'a music festival',
-          'going to the dentist'
+          t('ph.checkinHotel'),
+          t('ph.reheatedTakeout'),
+          t('ph.firstDate'),
+          t('ph.autoShop'),
+          t('ph.musicFestival'),
+          t('ph.dentist')
         ],
         maxLength: 25
       }
@@ -723,11 +738,11 @@ export const macros: IMacro[] = [
   },
   {
     id: 'unfold',
-    name: 'Unfold',
+    name: t('macro.unfold'),
     slug: 'unfold',
     icon: 'unfold',
     textLabel: '<-> <-> <-> < UNFOLD > <-> <-> <->',
-    description: 'Slot a word into other words or phrases.',
+    description: t('desc.unfold'),
     color: colors.water,
     videoUrl: watchLupeUseItVideos.unfold,
     lottie: 'unfold_hero_animation_lottie',
@@ -776,8 +791,15 @@ export const macros: IMacro[] = [
     },
     inputs: [
       {
-        label: 'Enter a word:',
-        placeholder: ['control', 'star', 'roof', 'hand', 'pin', 'blue'],
+        label: t('label.word'),
+        placeholder: [
+          t('ph.control'),
+          t('ph.star'),
+          t('ph.roof'),
+          t('ph.hand'),
+          t('ph.pin'),
+          t('ph.blue')
+        ],
         maxLength: 10,
         allowSpaces: false
       }
@@ -836,7 +858,7 @@ const constructMacroExplainer = (taskDescription: string) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          here
+          {t('link.here')}
         </a>
         .
       </p>
@@ -846,63 +868,43 @@ const constructMacroExplainer = (taskDescription: string) => {
 
 export const promptData: IPromptData = {
   simile: {
-    description: constructMacroExplainer(
-      'generate a simile from a thing or concept'
-    ),
+    description: constructMacroExplainer(t('pd.simile')),
     data: adaptPromptData(SIMILE_PROMPT_COMPONENTS)
   },
   explode: {
-    description: constructMacroExplainer(
-      'generate a similar-sounding phrase from a word or phrase'
-    ),
+    description: constructMacroExplainer(t('pd.explode')),
     data: adaptPromptData(EXPLODE_PROMPT_COMPONENTS)
   },
   unexpect: {
-    description: constructMacroExplainer(
-      'generate an unexpected plot twist from a short description of a scene'
-    ),
+    description: constructMacroExplainer(t('pd.unexpect')),
     data: adaptPromptData(UNEXPECT_PROMPT_COMPONENTS)
   },
   chain: {
-    description: constructMacroExplainer(
-      'generate a chain of semantically related words from a given starting word'
-    ),
+    description: constructMacroExplainer(t('pd.chain')),
     data: adaptPromptData(CHAIN_PROMPT_COMPONENTS)
   },
   pov: {
-    description: constructMacroExplainer(
-      'generate different perspectives on a given topic'
-    ),
+    description: constructMacroExplainer(t('pd.pov')),
     data: adaptPromptData(POV_PROMPT_COMPONENTS)
   },
   alliteration: {
-    description: constructMacroExplainer(
-      'generate words that begin with a given letter and also pertain to a given topic or domain'
-    ),
+    description: constructMacroExplainer(t('pd.alliteration')),
     data: adaptPromptData(ALLITERATION_PROMPT_COMPONENTS)
   },
   acronym: {
-    description: constructMacroExplainer(
-      'generate an acronym using the letters of a given word'
-    ),
+    description: constructMacroExplainer(t('pd.acronym')),
     data: adaptPromptData(ACRONYM_PROMPT_COMPONENTS)
   },
   fuse: {
-    description: constructMacroExplainer(
-      'generate commonalities between two given topics'
-    ),
+    description: constructMacroExplainer(t('pd.fuse')),
     data: adaptPromptData(FUSE_PROMPT_COMPONENTS)
   },
   scene: {
-    description: constructMacroExplainer(
-      'generate sensory details about a given person, place, or thing'
-    ),
+    description: constructMacroExplainer(t('pd.scene')),
     data: adaptPromptData(SCENE_PROMPT_COMPONENTS)
   },
   unfold: {
-    description: constructMacroExplainer(
-      'generate different ways a given word can appear in other existing words or phrases'
-    ),
+    description: constructMacroExplainer(t('pd.unfold')),
     data: adaptPromptData(UNFOLD_PROMPT_COMPONENTS)
   }
 }
@@ -929,5 +931,5 @@ export const tippyOptions = {
   ignoreAttributes: true
 }
 
-export const ERROR_MESSAGE = 'Internal error. Please try again.'
-export const NO_RESULTS_MESSAGE = 'No results generated. Please try again.'
+export const ERROR_MESSAGE = t('error.internal')
+export const NO_RESULTS_MESSAGE = t('error.noResults')

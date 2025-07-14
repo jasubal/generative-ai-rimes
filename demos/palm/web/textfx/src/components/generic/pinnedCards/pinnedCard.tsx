@@ -19,6 +19,7 @@ import {useActions} from '~/store'
 import type {Identifier, XYCoord} from 'dnd-core'
 import {useDrag, useDrop} from 'react-dnd'
 import {tippyOptions, IPin, IMacro} from '~/constants'
+import {t} from '~/translations'
 
 import Tippy from '@tippyjs/react'
 import Icon from '~/components/generic/icon/icon'
@@ -158,7 +159,7 @@ const PinnedCard = ({
           <p>{pinnedTextDisplay(pin.text)}</p>
           <div className={c(styles.pinActions)}>
             <Tippy
-              content="Copy"
+              content={t('pinned.copy')}
               placement="top-end"
               offset={[10, 10]}
               className={pin.id}
@@ -166,7 +167,7 @@ const PinnedCard = ({
             >
               <button
                 type="button"
-                aria-label="Copy"
+                aria-label={t('pinned.copy')}
                 onClick={() => {
                   setCopiedIndex(index)
                   setTimeout(() => {
@@ -179,7 +180,7 @@ const PinnedCard = ({
               </button>
             </Tippy>
             <Tippy
-              content="Unpin"
+              content={t('pinned.unpin')}
               placement="top-end"
               offset={[10, 10]}
               className={pin.id}
@@ -191,7 +192,7 @@ const PinnedCard = ({
                   pins.map(pin => pin.index).includes(index) && styles.pinned
                 )}
                 type="button"
-                aria-label="Unpin"
+                aria-label={t('pinned.unpin')}
                 onClick={() => {
                   pinOutput(pin.id, pin.index)
                 }}
@@ -199,19 +200,19 @@ const PinnedCard = ({
                 <Icon name="pinSolid" />
               </button>
             </Tippy>
-            <Tippy content="Drag" placement="top-end" {...tippyOptions}>
+            <Tippy content={t('pinned.drag')} placement="top-end" {...tippyOptions}>
               <button
                 ref={drag}
                 className={c(styles.dragButton)}
                 type="button"
-                aria-label="Drag"
+                aria-label={t('pinned.drag')}
                 onClick={() => {}}
               >
                 <Icon name="drag" />
               </button>
             </Tippy>
           </div>
-          <span className={c(styles.copied)}>Copied!</span>
+          <span className={c(styles.copied)}>{t('copied')}</span>
         </div>
       </div>
     </div>

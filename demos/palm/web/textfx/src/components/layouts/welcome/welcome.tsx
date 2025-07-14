@@ -21,6 +21,7 @@ import styles from './welcome.module.scss'
 import Button from '~/components/generic/button/button'
 import Screen1 from './screen1'
 import Screen2 from './screen2'
+import {t} from '~/translations'
 
 import c from 'classnames'
 
@@ -42,7 +43,7 @@ const WelcomeScreen = ({onNext = () => {}}: IWelcome) => {
       </div>
       <div className={styles.actions}>
         <Button
-          label={step === 1 ? "LET'S GO" : 'Next'}
+          label={step === 1 ? t('welcome.letsGo') : t('welcome.next')}
           className={styles.nextButton}
           variant="white"
           onClick={() => {
