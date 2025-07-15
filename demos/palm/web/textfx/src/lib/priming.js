@@ -18,8 +18,13 @@
 // NOTE: The prefix delimiter should not occur anywhere in the example value that follows a prefix
 export const PREFIX_DELIMITER = ':'
 
+// Instruct the language model to reply in Catalan by default
+export const LANGUAGE_INSTRUCTION = 'Totes les respostes han de ser en català.'
+
 export const constructPrompt = (promptComponents, inputs) => {
   const lines = []
+  // Include the default language instruction first
+  lines.push(LANGUAGE_INSTRUCTION)
   if (promptComponents.preamble) {
     lines.push(promptComponents.preamble)
   }
